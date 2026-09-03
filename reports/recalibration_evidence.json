@@ -1,0 +1,13 @@
+{
+  "vintage": 2007,
+  "n": 4000,
+  "realised_pd": 0.1315,
+  "predicted_pd_before": 0.03059,
+  "predicted_pd_after": 0.1315,
+  "ratio_before": 4.2985,
+  "ratio_after": 1.0,
+  "intercept_offset": 1.711,
+  "gini_before": 0.446817,
+  "gini_after": 0.446817,
+  "gini_change": 0.0
+}

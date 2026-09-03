@@ -1,0 +1,25 @@
+vintage,model,feasible,trained_on,gini,gini_low,gini_high,ratio,predicted_pd,realised_pd,n,note
+2004,champion,True,"[2004, 2005]",0.4934,0.3177,0.6646,0.9063,0.02,0.0182,1211,
+2004,challenger_feasible,True,[],,,,,,,0,no training vintage had a known outcome by this origination date
+2004,challenger_oracle,False,[],,,,,,,0,insufficient training rows
+2005,champion,True,"[2004, 2005]",0.4824,0.2962,0.643,1.3104,0.0207,0.0271,1182,
+2005,challenger_feasible,True,[],,,,,,,0,no training vintage had a known outcome by this origination date
+2005,challenger_oracle,False,[2004],0.4561,0.3044,0.6074,1.2196,0.0222,0.0271,1182,
+2006,champion,True,"[2004, 2005]",0.4243,0.367,0.4854,1.962,0.0273,0.0535,4000,
+2006,challenger_feasible,True,[],,,,,,,0,no training vintage had a known outcome by this origination date
+2006,challenger_oracle,False,"[2004, 2005]",0.4534,0.3982,0.5115,1.8758,0.0285,0.0535,4000,
+2007,champion,True,"[2004, 2005]",0.4468,0.4075,0.4878,4.2985,0.0306,0.1315,4000,
+2007,challenger_feasible,True,[2004],0.4026,0.3654,0.4425,4.4182,0.0298,0.1315,4000,
+2007,challenger_oracle,False,"[2005, 2006]",0.5289,0.4951,0.5679,2.6465,0.0497,0.1315,4000,
+2008,champion,True,"[2004, 2005]",0.4161,0.3663,0.4717,3.3814,0.0208,0.0705,4000,
+2008,challenger_feasible,True,"[2004, 2005]",0.4325,0.38,0.485,3.2689,0.0216,0.0705,4000,
+2008,challenger_oracle,False,"[2006, 2007]",0.5023,0.455,0.5509,1.0942,0.0644,0.0705,4000,
+2015,champion,True,"[2004, 2005]",0.398,0.2487,0.5518,0.4873,0.0226,0.011,4000,
+2015,challenger_feasible,True,"[2007, 2008]",0.5061,0.386,0.6372,0.2135,0.0515,0.011,4000,
+2015,challenger_oracle,False,"[2007, 2008]",0.5061,0.386,0.6372,0.2135,0.0515,0.011,4000,
+2016,champion,True,"[2004, 2005]",0.591,0.4881,0.693,0.5192,0.0207,0.0107,4000,
+2016,challenger_feasible,True,"[2007, 2008]",0.6073,0.5129,0.7068,0.2297,0.0468,0.0107,4000,
+2016,challenger_oracle,False,"[2008, 2015]",0.5741,0.4764,0.669,0.9148,0.0118,0.0107,4000,
+2017,champion,True,"[2004, 2005]",0.4318,0.2179,0.6331,0.4087,0.0221,0.009,1994,
+2017,challenger_feasible,True,"[2007, 2008]",0.4224,0.2607,0.602,0.1749,0.0516,0.009,1994,
+2017,challenger_oracle,False,"[2015, 2016]",0.2339,0.019,0.4354,0.7537,0.012,0.009,1994,

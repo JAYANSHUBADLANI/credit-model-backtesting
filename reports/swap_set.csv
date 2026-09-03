@@ -1,0 +1,10 @@
+band_champion,band_challenger,moved,loans,share,default_rate
+approve,approve,False,1913,0.4783,0.0512
+approve,decline,True,28,0.007,0.2857
+approve,refer,True,281,0.0703,0.1423
+decline,approve,True,62,0.0155,0.1452
+decline,decline,False,450,0.1125,0.38
+decline,refer,True,249,0.0622,0.2209
+refer,approve,True,427,0.1067,0.0796
+refer,decline,True,153,0.0382,0.2876
+refer,refer,False,437,0.1092,0.1533

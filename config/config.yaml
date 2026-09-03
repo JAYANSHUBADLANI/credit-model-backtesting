@@ -1,0 +1,120 @@
+# Every tunable value for the champion card, the backtest and the trigger layer lives here.
+# Changing a threshold, a window length or a vintage set is a config edit, not a code edit.
+
+data:
+  # Pipe delimited GSE loan level files. The fixture writes this same layout, so pointing the
+  # project at real Freddie Mac or Fannie Mae extracts is a path change and a layout check,
+  # not a rewrite. Read the current layout document before trusting the column order below.
+  origination_glob: "data/raw/origination_*.txt"
+  performance_glob: "data/raw/performance_*.txt"
+  delimiter: "|"
+
+target:
+  # Fixed for every vintage without exception. A 2008 origination observed at 12 months and a
+  # 2005 origination observed at 24 months are not comparable, and any chart that puts them
+  # side by side is measuring maturity rather than risk. Asserted in src/target.py.
+  performance_window_months: 24
+  # Default is 180+ days delinquent, or termination through a code that indicates a credit
+  # loss rather than a voluntary payoff. Verify these codes against the layout document.
+  default_dlq_threshold: 6
+  credit_loss_zero_balance_codes: ["02", "03", "09", "15"]
+  prepaid_zero_balance_codes: ["01"]
+  # A loan that neither terminated nor reached the full window is right truncated and is
+  # dropped rather than counted as good. Counting it as good is the single easiest way to
+  # make the most recent vintage look excellent.
+  drop_incomplete: true
+
+vintages:
+  # The champion is fitted here and then frozen. Deliberately a benign period.
+  fit: [2004, 2005]
+  # Everything the frozen champion is measured on, in order. Includes the fit vintages so
+  # the day one numbers sit on the same axis as everything after them.
+  backtest: [2004, 2005, 2006, 2007, 2008, 2015, 2016, 2017]
+  holdout_fraction: 0.30
+  seed: 20260828
+
+features:
+  numeric:
+    - credit_score
+    - orig_ltv
+    - orig_cltv
+    - second_lien_gap   # combined LTV minus LTV: the silent second lien
+    - dti
+    - orig_upb
+    - orig_rate
+    - mi_pct
+    - num_borrowers
+  categorical:
+    - purpose
+    - occupancy
+    - channel
+    - property_type
+    - first_time_buyer
+    - state
+
+binning:
+  max_prebins: 20
+  min_bin_fraction: 0.03
+  min_bin_bads: 5
+  enforce_monotonic: true
+  min_categorical_fraction: 0.01
+
+selection:
+  min_iv: 0.02
+  max_correlation: 0.75
+
+scaling:
+  base_score: 600.0
+  base_odds: 50.0
+  pdo: 20.0
+
+bands:
+  decline_below_percentile: 10.0
+  refer_below_percentile: 30.0
+
+backtest:
+  # Bootstrap resamples behind every discrimination confidence interval. The noise floor
+  # these produce is what makes "discrimination degraded" a measured claim rather than an
+  # observation that a number looks smaller. See scripts/gini_noise.py.
+  bootstrap_samples: 400
+  bootstrap_seed: 11
+  confidence: 0.90
+  # Deciles of the fit period score distribution. Calibration is reported per band against
+  # these fixed edges so the bands mean the same thing in every vintage.
+  calibration_bands: 10
+  min_band_count: 50
+
+triggers:
+  # Calibration is judged on the ratio of realised to predicted default rate. Inside this
+  # corridor the level is treated as right.
+  calibration_ratio_tolerance: 1.25
+  # A breach must survive its binomial confidence interval before it counts at all.
+  calibration_confidence: 0.95
+  # Consecutive breaching vintages required before anything fires. The direct analogue of the
+  # debounce in the drift monitor this project accompanies.
+  persistence_vintages: 2
+  # Vintages to wait before the same action can be recommended again.
+  cooldown_vintages: 2
+
+challenger:
+  # A challenger available at the origination of vintage v can only have been fitted on
+  # vintages whose outcomes were already known at that date. With a 24 month performance
+  # window plus reporting lag that is v-3, not v-1. Fitting on v-1 is the most common way to
+  # accidentally give a backtest information it could not have had.
+  training_lag_years: 3
+  training_window_years: 2
+  min_training_rows: 2000
+
+stability:
+  # Deciles of the fit period score distribution, the same reference the drift monitor in
+  # credit-scorecard-service uses.
+  reference_bins: 10
+  psi_warn: 0.10
+  psi_alert: 0.25
+  csi_warn: 0.10
+  csi_alert: 0.25
+
+artifacts:
+  model_path: "models/champion.joblib"
+  reference_path: "models/reference.json"
+  reports_dir: "reports"

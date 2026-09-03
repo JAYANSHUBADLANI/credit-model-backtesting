@@ -1,0 +1,9 @@
+vintage,in_fit_period,n,bad_rate,auc,gini,ks,gini_low,gini_high,baseline_gini,gini_change,degraded,verdict
+2004,True,1211,0.01817,0.7467,0.4934,0.4482,0.3177,0.6646,0.489,0.0044,False,no degradation
+2005,True,1182,0.02707,0.7412,0.4824,0.4039,0.2962,0.643,0.489,-0.0066,False,"lower point estimate, inside the interval, not proven"
+2006,False,4000,0.0535,0.7122,0.4243,0.3217,0.367,0.4854,0.489,-0.0647,False,"lower point estimate, inside the interval, not proven"
+2007,False,4000,0.1315,0.7234,0.4468,0.3383,0.4075,0.4878,0.489,-0.0422,False,"lower point estimate, inside the interval, not proven"
+2008,False,4000,0.0705,0.7081,0.4161,0.3304,0.3663,0.4717,0.489,-0.0729,False,"lower point estimate, inside the interval, not proven"
+2015,False,4000,0.011,0.699,0.398,0.3483,0.2487,0.5518,0.489,-0.091,False,"lower point estimate, inside the interval, not proven"
+2016,False,4000,0.01075,0.7955,0.591,0.496,0.4881,0.693,0.489,0.102,False,no degradation
+2017,False,1994,0.00903,0.7159,0.4318,0.4125,0.2179,0.6331,0.489,-0.0572,False,"lower point estimate, inside the interval, not proven"

@@ -1,0 +1,8 @@
+{
+  "holdout_loans": 2393,
+  "holdout_defaults": 54,
+  "holdout_gini": 0.489,
+  "replicates": 300,
+  "noise_floor_at_4000_loans": 0.1693,
+  "reading": "a year on year Gini change smaller than the spread at the relevant vintage size is not evidence of degradation. Every degradation verdict in this project is a non overlap of bootstrap intervals for this reason, never a comparison of point estimates."
+}

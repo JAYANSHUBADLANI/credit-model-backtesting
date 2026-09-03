@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store
+
+# The extract itself. Real GSE files are large and are not mine to redistribute; the
+# synthetic ones are regenerated deterministically by `make fixture`.
+data/raw/*.txt
+
+# The fitted artifact is rebuilt by `make train` in a few seconds.
+models/*.joblib
+
+# reports/ is deliberately NOT ignored. Those files are the evidence behind every number in
+# the README, and excluding them would make the claims uncheckable without rerunning the
+# whole thing. They are a few hundred kilobytes of CSV.

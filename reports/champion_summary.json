@@ -1,0 +1,36 @@
+{
+  "fit_vintages": [
+    2004,
+    2005
+  ],
+  "performance_window_months": 24,
+  "train_rows": 5606,
+  "train_bad_rate": 0.02051,
+  "holdout_rows": 2393,
+  "holdout_bad_rate": 0.02257,
+  "characteristics_considered": 15,
+  "characteristics_retained": 8,
+  "retained": [
+    "credit_score",
+    "state",
+    "orig_cltv",
+    "dti",
+    "orig_rate",
+    "mi_pct",
+    "property_type",
+    "purpose"
+  ],
+  "day_one": {
+    "n": 2393,
+    "bad_rate": 0.02257,
+    "auc": 0.7445,
+    "gini": 0.489,
+    "ks": 0.3987,
+    "gini_low": 0.3794,
+    "gini_high": 0.6048
+  },
+  "band_cutoffs": {
+    "decline_below": 573.11,
+    "refer_below": 597.68
+  }
+}

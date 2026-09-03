@@ -1,0 +1,53 @@
+{
+  "as_of_period": 201906,
+  "champion": "champion-2004-2005",
+  "fit_vintages": [
+    2004,
+    2005
+  ],
+  "day_one": {
+    "n": 2393,
+    "bad_rate": 0.02257,
+    "auc": 0.7445,
+    "gini": 0.489,
+    "ks": 0.3987,
+    "gini_low": 0.3794,
+    "gini_high": 0.6048
+  },
+  "first_breach": {
+    "first_stability_breach_vintage": 2007,
+    "first_stability_known_by": 200712,
+    "first_calibration_breach_vintage": 2006,
+    "first_calibration_known_by": 200812,
+    "first_discrimination_breach_vintage": null,
+    "first_discrimination_known_by": null,
+    "lead_months_stability_over_calibration": 12,
+    "same_vintage": false,
+    "reading": "the outcome breached first. The stability index did not move until a later vintage, so on this book it bought no warning at all"
+  },
+  "actions": [
+    {
+      "vintage": 2007,
+      "action": "recalibrate",
+      "reason": "under predicting for 2 consecutive vintages with the ranking intact; the level is wrong, not the order"
+    },
+    {
+      "vintage": 2015,
+      "action": "recalibrate",
+      "reason": "over predicting for 4 consecutive vintages with the ranking intact; the level is wrong, not the order"
+    }
+  ],
+  "recalibration": {
+    "vintage": 2007,
+    "n": 4000,
+    "realised_pd": 0.1315,
+    "predicted_pd_before": 0.03059,
+    "predicted_pd_after": 0.1315,
+    "ratio_before": 4.2985,
+    "ratio_after": 1.0,
+    "intercept_offset": 1.711,
+    "gini_before": 0.446817,
+    "gini_after": 0.446817,
+    "gini_change": 0.0
+  }
+}

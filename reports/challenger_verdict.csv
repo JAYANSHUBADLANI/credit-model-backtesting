@@ -1,0 +1,17 @@
+vintage,challenger,available,gini_delta,ratio_champion,ratio_challenger,reading,trained_on,gini_champion,gini_challenger
+2004,feasible,False,,0.9063,,no training vintage had a known outcome by this origination date,,,
+2004,oracle,False,,0.9063,,insufficient training rows,,,
+2005,feasible,False,,1.3104,,no training vintage had a known outcome by this origination date,,,
+2005,oracle,True,-0.0263,1.31,1.22,"ranking worse, level closer to right",[2004],0.4824,0.4561
+2006,feasible,False,,1.962,,no training vintage had a known outcome by this origination date,,,
+2006,oracle,True,0.0291,1.962,1.876,"ranking improved, level closer but still off","[2004, 2005]",0.4243,0.4534
+2007,feasible,True,-0.0442,4.298,4.418,"ranking worse, level no better",[2004],0.4468,0.4026
+2007,oracle,True,0.0821,4.298,2.647,"ranking improved, level closer but still off","[2005, 2006]",0.4468,0.5289
+2008,feasible,True,0.0164,3.381,3.269,"ranking essentially unchanged, level closer but still off","[2004, 2005]",0.4161,0.4325
+2008,oracle,True,0.0862,3.381,1.094,"ranking improved, level closer to right","[2006, 2007]",0.4161,0.5023
+2015,feasible,True,0.1081,0.487,0.213,"ranking improved, level no better","[2007, 2008]",0.398,0.5061
+2015,oracle,True,0.1081,0.487,0.213,"ranking improved, level no better","[2007, 2008]",0.398,0.5061
+2016,feasible,True,0.0163,0.519,0.23,"ranking essentially unchanged, level no better","[2007, 2008]",0.591,0.6073
+2016,oracle,True,-0.0169,0.519,0.915,"ranking essentially unchanged, level closer to right","[2008, 2015]",0.591,0.5741
+2017,feasible,True,-0.0094,0.409,0.175,"ranking essentially unchanged, level no better","[2007, 2008]",0.4318,0.4224
+2017,oracle,True,-0.1979,0.409,0.754,"ranking worse, level closer to right","[2015, 2016]",0.4318,0.2339

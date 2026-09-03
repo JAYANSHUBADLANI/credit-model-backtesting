@@ -1,0 +1,9 @@
+vintage,n,psi_score,status,mean_score,reference_mean_score,approval_rate,gini,gini_low,gini_high,degraded,verdict,predicted_pd,realised_pd,ratio,ratio_low,ratio_high,stability_known_by,outcome_known_by,lead_months,calibration_breach_under,calibration_breach_over,calibration_breach,calibration_direction,stability_breach
+2004,1211,0.0057,ok,616.94,615.65,0.7085,0.4934,0.3177,0.6646,False,no degradation,0.02005,0.01817,0.9063,0.6,1.3646,200412,200612,24,False,False,False,,False
+2005,1182,0.0049,ok,614.53,615.65,0.6836,0.4824,0.2962,0.643,False,"lower point estimate, inside the interval, not proven",0.02066,0.02707,1.3104,0.9313,1.8377,200512,200712,24,False,False,False,,False
+2006,4000,0.0708,ok,607.33,615.65,0.5915,0.4243,0.367,0.4854,False,"lower point estimate, inside the interval, not proven",0.02727,0.0535,1.962,1.7216,2.2339,200612,200812,24,True,False,True,under predicting,False
+2007,4000,0.1406,warn,603.42,615.65,0.5555,0.4468,0.4075,0.4878,False,"lower point estimate, inside the interval, not proven",0.03059,0.1315,4.2985,3.9676,4.6524,200712,200912,24,True,False,True,under predicting,True
+2008,4000,0.0049,ok,614.21,615.65,0.684,0.4161,0.3663,0.4717,False,"lower point estimate, inside the interval, not proven",0.02085,0.0705,3.3814,3.0203,3.782,200812,201012,24,True,False,True,under predicting,False
+2015,4000,0.0943,ok,610.5,615.65,0.684,0.398,0.2487,0.5518,False,"lower point estimate, inside the interval, not proven",0.02257,0.011,0.4873,0.3634,0.6527,201512,201712,24,False,True,True,over predicting,False
+2016,4000,0.043,ok,613.72,615.65,0.7115,0.591,0.4881,0.693,False,no degradation,0.0207,0.01075,0.5192,0.3859,0.6978,201612,201812,24,False,True,True,over predicting,False
+2017,1994,0.0649,ok,611.81,615.65,0.6991,0.4318,0.2179,0.6331,False,"lower point estimate, inside the interval, not proven",0.02208,0.00903,0.4087,0.2589,0.6441,201712,201912,24,False,True,True,over predicting,False
