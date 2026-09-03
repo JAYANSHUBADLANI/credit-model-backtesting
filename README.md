@@ -6,7 +6,7 @@ Watching whether a credit scorecard is still **right**, measured against realise
 time, rather than whether its inputs have moved.
 
 This is the second half of a pair. The first,
-[`credit-scorecard-service`](../credit-scorecard-service), serves a scorecard behind an API and
+[`credit-scorecard-service`](https://github.com/JAYANSHUBADLANI/credit-scorecard-service), serves a scorecard behind an API and
 watches its inputs and outputs with stability indices. It ends on an admission: nothing in it
 monitors whether the model is still correct, only whether the population has shifted. A card can
 be perfectly stable and quietly stop working. This project is the other half, and its most

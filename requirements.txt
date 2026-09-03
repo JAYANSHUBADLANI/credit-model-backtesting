@@ -5,4 +5,4 @@ PyYAML==6.0.2
 joblib==1.4.2
 # 1.50 introduced width="stretch" on st.dataframe, which dashboard/app.py uses;
 # 1.40.2 required an integer there and the dashboard raises on every table.
-streamlit==1.51.0
+streamlit==1.54.0
