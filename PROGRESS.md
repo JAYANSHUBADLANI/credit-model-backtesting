@@ -31,7 +31,7 @@ Until that happens, every finding is a finding about the pipeline.
 
 - Weight of evidence and logistic methodology reused unchanged from
   `credit-scorecard-service`, including `binning.py` and `scorecard.py` themselves.
-- Fitted on 2004–2005, frozen, never refitted. 8 of 15 characteristics retained. Day one holdout
+- Fitted on 2004-2005, frozen, never refitted. 8 of 15 characteristics retained. Day one holdout
   Gini 0.4890, KS 0.3987, AUC 0.7445 on 2,393 loans.
 - `fit_card` is shared with the challenger, so a challenger cannot differ from the champion by
   procedure.
@@ -85,7 +85,7 @@ Until that happens, every finding is a finding about the pipeline.
   challenger had one benign vintage to learn from. Even the oracle, with two years it should not
   have had, was still 2.6× off.
 - **Retraining on a crisis leaves you over conservative for years afterwards.** The feasible 2015
-  challenger, forced onto 2007–2008, predicts nearly five times the risk that materialises.
+  challenger, forced onto 2007-2008, predicts nearly five times the risk that materialises.
 - **The noise floor decides how much can be said.** Seven of eight vintages returned "not proven"
   on discrimination. Wanting a cleaner story does not make the intervals narrower.
 

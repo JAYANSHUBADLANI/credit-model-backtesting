@@ -36,7 +36,7 @@ downstream changes.
 ## 3. Check the sentinels
 
 `SENTINELS` in `src/loans.py` lists the values that mean "not collected" rather than a
-measurement — a credit score of 9999, a debt to income of 999. Read naively, 9999 is the best
+measurement, a credit score of 9999, a debt to income of 999. Read naively, 9999 is the best
 applicant in the book, it survives quantile binning as a real bin, and the card allocates points
 to a missing data code. Confirm the values this extract uses and add any that are missing.
 

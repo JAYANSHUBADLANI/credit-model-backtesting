@@ -1,5 +1,7 @@
 # Credit model backtesting and outcome monitoring
 
+[![tests](https://github.com/JAYANSHUBADLANI/credit-model-backtesting/actions/workflows/pytest.yml/badge.svg)](https://github.com/JAYANSHUBADLANI/credit-model-backtesting/actions/workflows/pytest.yml)
+
 Watching whether a credit scorecard is still **right**, measured against realised defaults over
 time, rather than whether its inputs have moved.
 
@@ -14,8 +16,8 @@ useful result turned out to be a criticism of the first one.
 
 **Every figure in this README was produced from a synthetic extract that I generated.** The real
 Freddie Mac and Fannie Mae loan level datasets are free but sit behind a registration that an
-automated build cannot complete, so rather than ship a pipeline that had never been run — a
-mistake I have already made once and written up — the whole thing is exercised end to end
+automated build cannot complete, so rather than ship a pipeline that had never been run, a
+mistake I have already made once and written up, the whole thing is exercised end to end
 against `scripts/make_fixture.py`, which writes the same pipe delimited layout the real extracts
 use.
 
@@ -40,7 +42,7 @@ Three things came out of this that I did not expect when I planned it.
 
 **1. Calibration failed catastrophically while discrimination never provably moved.**
 
-The frozen 2004–2005 card was still ranking loans in 2007 about as well as it ever had — Gini
+The frozen 2004-2005 card was still ranking loans in 2007 about as well as it ever had: Gini
 0.4468 against a day one 0.4890, a gap that sits comfortably inside the measured noise. Over the
 same book it predicted a 3.06% default rate against a realised 13.15%. A factor of **4.3**. A
 monitoring setup watching the Gini would have reported no problem at all, for years, through a
@@ -64,7 +66,7 @@ provisioning model actually uses, the prime end of the book was the part nobody 
 **3. The early warning signal bought nothing on this book.**
 
 This is the part that criticises the other project. The score stability index reached only
-`warn` (0.1406), and not until the 2007 vintage — one vintage *after* calibration had already
+`warn` (0.1406), and not until the 2007 vintage, one vintage *after* calibration had already
 breached. The run reports it plainly:
 
 > the outcome breached first. The stability index did not move until a later vintage, so on
@@ -72,7 +74,7 @@ breached. The run reports it plainly:
 
 The reason is structural, not a tuning failure. A stability index compares who is applying now
 with who applied before. It can only see a change in **composition**. The failure planted here
-is mostly a change in the **level of risk attached to unchanged characteristics** — the same
+is mostly a change in the **level of risk attached to unchanged characteristics**, the same
 borrower, the same LTV, a different world. That is invisible to input monitoring by
 construction, however the thresholds are set.
 
@@ -145,7 +147,7 @@ interviewer at first.
 
 The obvious definition of a usable loan is "it terminated, or it reached the end of the window".
 Applied to a vintage the extract only partly covers, that keeps every loan that defaulted early
-— defaulting *is* a termination — and drops every loan still quietly performing. The survivors
+(defaulting *is* a termination) and drops every loan still quietly performing. The survivors
 are discarded and the failures are kept.
 
 On the fixture it inflated the newest vintage from **0.90% to 2.1%**, putting it above vintages
@@ -160,7 +162,7 @@ regression test.
 ### Prepayment is a competing risk and is never folded into the target
 
 A loan that prepaid at month eight never had the opportunity to default. Mortgage prepayment is
-not a rounding error — a quarter to a third of every vintage here leaves early. Both rates are
+not a rounding error, a quarter to a third of every vintage here leaves early. Both rates are
 reported side by side and every table says which one it is:
 
 | vintage | complete | defaults | prepaid | naive rate | survivors only |
@@ -249,7 +251,7 @@ that at these sample sizes it could not have.
 A breach has to clear its own interval, so 2005's point ratio of 1.31 against a 1.25 tolerance is
 not a breach: the interval reaches below it.
 
-**The test is two sided.** Under prediction is the dangerous direction — losses arriving that
+**The test is two sided.** Under prediction is the dangerous direction, losses arriving that
 were not provisioned for. Over prediction is the expensive one: 2015 through 2017 predict roughly
 double the risk that materialises, which means declining profitable business every day the card
 is left alone. Calling that "conservative" rather than "wrong" is how it survives for years.
@@ -302,11 +304,11 @@ Eight vintages produced **two** recommendations, both recalibrate:
 
 | vintage | breach | run | action | note |
 |---|---|---|---|---|
-| 2006 | under predicting | 1 | — | below the persistence requirement |
+| 2006 | under predicting | 1 | - | below the persistence requirement |
 | 2007 | under predicting | 2 | **recalibrate** | level is wrong, not the order |
-| 2008 | under predicting | 3 | — | cooldown active until 2009 |
+| 2008 | under predicting | 3 | - | cooldown active until 2009 |
 | 2015 | over predicting | 4 | **recalibrate** | level is wrong, not the order |
-| 2016–2017 | over predicting | 5–6 | — | cooldown active until 2017 |
+| 2016-2017 | over predicting | 5-6 | - | cooldown active until 2017 |
 
 Every suppressed breach is still written to the audit trail with the reason. A monitoring system
 that silently drops signals is indistinguishable from one that never saw them.
@@ -330,7 +332,7 @@ invalidate anything that was approved on the basis of one.
 
 A challenger sitting in front of the 2007 book can only have been fitted on vintages whose
 outcomes were already known at the start of 2007. With a 24 month window that is 2004, and
-nothing later. Fitting it on 2006 — which is what "retrain on recent data" means in practice —
+nothing later. Fitting it on 2006, which is what "retrain on recent data" means in practice,
 hands the backtest two years of information the decision maker did not have.
 
 So two challengers are fitted at every vintage: **feasible**, respecting that constraint, and
@@ -355,7 +357,7 @@ amount of retraining fixes a level failure while it is happening. Recalibration 
 after the outcome is known.
 
 **Retraining on the crisis leaves you badly over conservative afterwards.** The feasible
-challenger for 2015, forced onto 2007–2008, predicts nearly five times the risk that
+challenger for 2015, forced onto 2007-2008, predicts nearly five times the risk that
 materialises. Its ranking is better than the champion's and its level is far worse.
 
 ### Swap set
