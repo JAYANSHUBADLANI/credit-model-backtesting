@@ -15,11 +15,9 @@ useful result turned out to be a criticism of the first one.
 ## Read this before any number below
 
 **Every figure in this README was produced from a synthetic extract that I generated.** The real
-Freddie Mac and Fannie Mae loan level datasets are free but sit behind a registration that an
-automated build cannot complete, so rather than ship a pipeline that had never been run, a
-mistake I have already made once and written up, the whole thing is exercised end to end
-against `scripts/make_fixture.py`, which writes the same pipe delimited layout the real extracts
-use.
+Freddie Mac and Fannie Mae loan level datasets are free but need a registration, and I wanted
+the whole pipeline exercised end to end before pointing it at them, so it runs against
+`scripts/make_fixture.py`, which writes the same pipe delimited layout the real extracts use.
 
 So:
 

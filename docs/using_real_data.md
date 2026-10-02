@@ -6,8 +6,7 @@ precisely so this stays a configuration job.
 
 ## 1. Get the data
 
-Either publisher works. Both are free and both require a registration that has to be completed
-by a person.
+Either publisher works. Both are free and both need a registration first.
 
 - **Freddie Mac Single Family Loan-Level Dataset.** Prefer this one to start. It publishes
   **sample files**: a random 50,000 loans per origination year with matching monthly

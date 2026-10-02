@@ -1,11 +1,9 @@
 """Generate a synthetic loan level extract in the GSE file layout.
 
 Why this exists, stated as plainly as possible so nothing downstream is read as more than it
-is: the real Freddie Mac and Fannie Mae loan level datasets are free but sit behind a
-registration, and cannot be fetched by an automated build. Without data, the whole pipeline
-would be code that had never once been run, which is the exact failure this author has already
-made and written up in another repository. So the pipeline is exercised end to end against a
-generator that writes the same pipe delimited layout the real extracts use.
+is: the real Freddie Mac and Fannie Mae loan level datasets are free but need a registration.
+Rather than leave the pipeline as code that had never once been run, it is exercised end to end
+against a generator that writes the same pipe delimited layout the real extracts use.
 
 **Every finding produced from this fixture is a finding about the pipeline, not about
 mortgages.** The degradation below was put there deliberately, by the parameters in this file,

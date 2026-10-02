@@ -7,9 +7,9 @@ Running status for this project. Updated as phases complete.
 Every phase below is built, tested and executed. `make demo` runs the whole thing in under a
 minute and writes the evidence behind every number in the README to `reports/`.
 
-The one thing that is not done, and cannot be done from here, is the real extract. Both the
-Freddie Mac and Fannie Mae loan level datasets require a registration a person has to complete.
-Until that happens, every finding is a finding about the pipeline.
+The one thing that is not done is the real extract. Both the Freddie Mac and Fannie Mae loan
+level datasets need a free registration first. Until that run happens, every finding is a finding
+about the pipeline.
 
 ## Phase by phase
 

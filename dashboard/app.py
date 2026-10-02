@@ -25,8 +25,8 @@ def _read(path_str: str) -> pd.DataFrame:
     """Keyed on the path, not on no arguments.
 
     A cached loader keyed on nothing returns the first frame it ever built for every later
-    call, whatever was asked for. That defect shipped once in the dashboard of the project
-    this accompanies and was caught by a test rather than by looking at the page.
+    call, whatever was asked for. It is the kind of defect a test catches and a glance at the
+    page does not.
     """
     path = Path(path_str)
     return pd.read_csv(path) if path.exists() else pd.DataFrame()
